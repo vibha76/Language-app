@@ -9,7 +9,7 @@ export type SpeechProfile = {
 
 export const speechProfiles:Record<string,SpeechProfile>={
   kn:{code:'kn',locale:'kn-IN',sttLanguage:'kn-IN',ttsProvider:'sarvam',ttsVoice:'kavitha',pronunciationNotes:['Keep retroflex consonants distinct from dental sounds.','Do not rush vowel length.']},
-  sa:{code:'sa',locale:'sa-IN',sttLanguage:'sa-IN',ttsProvider:'openai',ttsVoice:'marin',pronunciationNotes:['Sanskrit is treated as its own language, not Hindi.','Hold vowel length and aspirated consonants clearly.','For Vedic material, pitch accents require a dedicated Vedic audio source.']},
+  sa:{code:'sa',locale:'sa-IN',sttLanguage:'sa-IN',ttsProvider:'vexyl',pronunciationNotes:['Sanskrit is treated as its own language, not Hindi.','Hold vowel length and aspirated consonants clearly.','For Vedic material, pitch accents require a dedicated Vedic audio source.']},
   hi:{code:'hi',locale:'hi-IN',sttLanguage:'hi-IN',ttsProvider:'sarvam',ttsVoice:'priya',pronunciationNotes:['Keep dental and retroflex consonants distinct.']},
   ta:{code:'ta',locale:'ta-IN',sttLanguage:'ta-IN',ttsProvider:'sarvam',ttsVoice:'kavitha',pronunciationNotes:['Keep short and long vowels distinct.']},
   te:{code:'te',locale:'te-IN',sttLanguage:'te-IN',ttsProvider:'sarvam',ttsVoice:'anand',pronunciationNotes:['Keep long vowels stable and avoid English stress patterns.']},
