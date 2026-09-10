@@ -5,7 +5,7 @@ enum Role { LEARNER PARENT TEACHER CONTENT_CREATOR REVIEWER SUPPORT ADMIN }
 enum ContentStatus { DRAFT REVIEW APPROVED PUBLISHED ARCHIVED }
 enum ActivityType { LESSON EXERCISE SPEAKING WRITING LISTENING CONVERSATION EXAM REVIEW }
 
-a model User { id String @id @default(cuid()) email String @unique displayName String role Role @default(LEARNER) createdAt DateTime @default(now()) profile Profile? progress LearningProgress[] sessions LearningSession[] attempts Attempt[] xp XPTransaction[] achievements UserAchievement[] certificates Certificate[] @@index([role]) }
+model User { id String @id @default(cuid()) email String @unique displayName String role Role @default(LEARNER) createdAt DateTime @default(now()) profile Profile? progress LearningProgress[] sessions LearningSession[] attempts Attempt[] xp XPTransaction[] achievements UserAchievement[] certificates Certificate[] @@index([role]) }
 model Profile { id String @id @default(cuid()) userId String @unique uiLanguageCode String @default("en") dailyMinutes Int @default(10) goals Json? childSafeMode Boolean @default(false) user User @relation(fields:[userId], references:[id], onDelete:Cascade) }
 model Language { id String @id @default(cuid()) code String @unique name String nativeName String scriptId String region String? framework String? isActive Boolean @default(true) script Script @relation(fields:[scriptId], references:[id]) courses Course[] vocabulary Vocabulary[] grammar GrammarConcept[] }
 model Script { id String @id @default(cuid()) code String @unique name String direction String @default("ltr") transliterationName String? languages Language[] }
