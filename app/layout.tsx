@@ -1,5 +1,6 @@
 import './globals.css';
 import './extra.css';
+import './speech.css';
 import type {Metadata} from 'next';
 
 export const metadata: Metadata = {
