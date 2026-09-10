@@ -1,0 +1,2 @@
+import {NextResponse} from 'next/server'; import {mockConversation} from '../../../../src/ai/contracts';
+export async function POST(req:Request){const body=await req.json(); const result=await mockConversation.reply(String(body.input??''),{languageCode:String(body.languageCode??'kn'),level:String(body.level??'beginner'),goals:Array.isArray(body.goals)?body.goals:[]}); return NextResponse.json({provider:'mock',...result,productionReadyAdapter:true});}
